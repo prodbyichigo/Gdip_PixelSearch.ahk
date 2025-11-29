@@ -47,13 +47,14 @@
 
 Gdip_PixelSearch(pBitmapHaystack, pColor, SearchDir := 1, int_levelOfVariation := 0, &posX := 0, &posY := 0) {
     Gdip_GetImageDimensions(pBitmapHaystack, &hWidth, &hHeight)
-    Gdip_LockBits(pBitmapHaystack, 0, 0, hWidth, hHeight, &Stride, &Scan0, &BitmapData)
 
     if hWidth <= 0 ?? hHeight <= 0
         return -1001
 
     if !IsInteger(int_levelOfVariation) ?? int_levelOfVariation < 0 ?? int_levelOfVariation > 255
         return -1002
+
+    Gdip_LockBits(pBitmapHaystack, 0, 0, hWidth, hHeight, &Stride, &Scan0, &BitmapData)
 
     minR := minG := minB := maxR := maxG := maxB := 0
 
