@@ -48,10 +48,10 @@
 Gdip_PixelSearch(pBitmapHaystack, pColor, SearchDir := 1, int_levelOfVariation := 0, &posX := 0, &posY := 0) {
     Gdip_GetImageDimensions(pBitmapHaystack, &hWidth, &hHeight)
 
-    if hWidth <= 0 ?? hHeight <= 0
+    if hWidth <= 0 OR hHeight <= 0
         return -1001
 
-    if !IsInteger(int_levelOfVariation) ?? int_levelOfVariation < 0 ?? int_levelOfVariation > 255
+    if !IsInteger(int_levelOfVariation) OR int_levelOfVariation < 0 OR int_levelOfVariation > 255
         return -1002
 
     Gdip_LockBits(pBitmapHaystack, 0, 0, hWidth, hHeight, &Stride, &Scan0, &BitmapData)
