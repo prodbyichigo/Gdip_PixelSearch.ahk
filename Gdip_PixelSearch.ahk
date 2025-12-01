@@ -10,7 +10,7 @@
 /**
  * @author prodbyichigo, MasterFocus (Some methods inspired)
  *
- * @function Gdip_PixelSearch
+ * @function Gdip_PixelSearch()
  * @description
  * Searches a GDI+ bitmap (`pBitmapHaystack`) for a pixel whose ARGB value matches
  * `pColor`, with support for eight directional search modes and optional color
